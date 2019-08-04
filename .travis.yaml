@@ -12,7 +12,7 @@ after_success:
   - docker build -t 4990814/nginx-prod ./nginx
   - docker build -t 4990814/server-prod ./server
   - docker build -t 4990814/client-prod ./testdocker
-  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "DOCKER_PASS" | docker login -u "DOCKER_ID" --password-stdin
   - docker push 4990814/nginx-prod
   - docker push 4990814/server-prod
   - docker push 4990814/client-prod
