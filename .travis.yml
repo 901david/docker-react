@@ -3,10 +3,10 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t 4990814/client-prod -f ./testdocker/Dockerfile.dev ./testdocker
+  - docker build -t 4990814/client -f ./testdocker/Dockerfile.dev ./testdocker
 
 script:
-  - docker run -e CI=true 4990814/client-prod npm run test
+  - docker run -e CI=true 4990814/client npm run test
 
 after_success:
   - docker build -t 4990814/nginx-prod ./nginx
