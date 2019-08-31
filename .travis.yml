@@ -6,7 +6,7 @@ before_install:
   - docker build -t 4990814/client -f ./testdocker/Dockerfile.dev ./testdocker
 
 script:
-  - docker run 4990814/client npm run test -- --coverage
+  - docker run CI=true 4990814/client npm run test
 
 after_success:
   - docker build -t 4990814/nginx-prod ./nginx
