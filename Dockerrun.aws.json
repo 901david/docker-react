@@ -1,5 +1,5 @@
 {
-  "AWSEBDockerVersion": 2,
+  "AWSEBDockerVersion": "2",
   "containerDefinitions": [
     {
       "name": "router",
