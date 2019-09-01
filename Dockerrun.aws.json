@@ -6,6 +6,7 @@
       "image": "4990814/nginx-prod",
       "hostname": "router",
       "essential": true,
+      "memoryReservation": 256,
       "portMappings": [
         {
           "hostPort": 80,
