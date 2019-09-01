@@ -1,0 +1,30 @@
+{
+  "AWSEBDockerVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "router",
+      "image": "4990814/nginx-prod",
+      "hostname": "router",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["api", "client"]
+    },
+    {
+      "name": "api",
+      "image": "4990814/server-prod",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "client",
+      "image": "4990814/client-prod",
+      "hostname": "client",
+      "essential": false
+    }
+  ]
+}

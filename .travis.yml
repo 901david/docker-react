@@ -16,3 +16,16 @@ after_success:
   - docker push 4990814/nginx-prod
   - docker push 4990814/server-prod
   - docker push 4990814/client-prod
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: test-docker
+  env: TestDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-102512284296
+  bucket_path: test-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
