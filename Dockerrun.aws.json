@@ -19,13 +19,15 @@
       "name": "api",
       "image": "4990814/server-prod",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memoryReservation": 256
     },
     {
       "name": "client",
       "image": "4990814/client-prod",
       "hostname": "client",
-      "essential": false
+      "essential": false,
+      "memoryReservation": 256
     }
   ]
 }
